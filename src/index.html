@@ -2,23 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>To Do List</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load ="partials/header.html" />
+    <div class="container">
+      <header class="header"></header>
+      <main>
+        <section class="todos">
+          <h1 class="todo-title">
+            To do list
+            <span class="time"></span>
+          </h1>
 
-    <section>
-      <h1>Example page title</h1>
-      <!-- Path to images as from index.html file -->
-      <img src="./img/javascript.svg" alt="" />
-    </section>
+          <form class="todos-form js-form">
+            <input
+              class="todos-input"
+              type="text"
+              name="todos"
+              id="newTodoInput"
+              min="0"
+              max="100"
+              placeholder="Add new task..."
+            />
 
-    <!-- Loads the specified .html file -->
-    <load ="partials/vite-promo.html" />
+            <p class="text-priority">Priority</p>
 
-    <script type="module" src="./main.js"></script>
+            <select name="select" class="todos-select">
+              <option value="high">higt</option>
+              <option value="medium">medium</option>
+              <option value="low">low</option>
+            </select>
+
+            <button class="todos-btn" type="submit" data-add>&#43;</button>
+          </form>
+
+          <ul class="todos-list"></ul>
+        </section>
+      </main>
+      <div class="newTask"></div>
+    </div>
+
+    <footer></footer>
+    <script type="module" src="./js/script.js"></script>
   </body>
 </html>

@@ -5,8 +5,8 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+@import url('./todo.css');
+
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -16,6 +16,7 @@
 
   color: #242424;
   background-color: rgba(255, 255, 255, 0.87);
+ 
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
