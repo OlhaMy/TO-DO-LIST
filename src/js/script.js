@@ -1,5 +1,14 @@
-import Date from './dateRender';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
+import Data from './dateRender';
+
 import { saveToLs, loadFromLs } from './localStorage';
+import {
+  sortTodosByPriority,
+  createBgColor,
+  createTodoMarkup,
+} from './todoMarkup';
 
 const refs = {
   form: document.querySelector('.js-form'),
@@ -16,8 +25,11 @@ refs.form.addEventListener('submit', e => {
   const todosPriority = e.currentTarget.elements.select.value;
 
   if (!todosName || !todosPriority) {
-    alert('Please enter both a task and a priority');
-    return;
+    return iziToast.error({
+      title: 'Error',
+      message: 'Please enter both a task and a priority',
+      position: 'topRight',
+    });
   }
 
   const todo = {
@@ -26,16 +38,16 @@ refs.form.addEventListener('submit', e => {
     priority: todosPriority,
   };
   todos.push(todo);
+  todos = sortTodosByPriority(todos);
   saveToLs('todos', todos);
 
-  refs.todoList.insertAdjacentHTML('beforeend', createTodoMarkup(todo));
+  refs.todoList.innerHTML = todos.map(createTodoMarkup).join('');
   e.currentTarget.reset();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const storedTodos = loadFromLs('todos');
-  if (storedTodos) {
-    todos = storedTodos;
+  if (todos.length) {
+    todos = sortTodosByPriority(todos);
     refs.todoList.innerHTML = todos.map(createTodoMarkup).join('');
   }
 });
@@ -50,32 +62,11 @@ refs.todoList.addEventListener('click', e => {
     saveToLs('todos', todos);
     e.target.closest('.todos-item').remove();
   }
-});
-
-function createBgColor(priority) {
-  switch (priority) {
-    case 'high':
-      return '#F08080';
-    case 'medium':
-      return '#FFFACD';
-    case 'low':
-      return '#D3D3D3';
-    default:
-      return '#fff';
+  if (e.target.id === 'done') {
+    const todoItem = e.target.closest('.todos-item');
+    todoItem.querySelector('.todos-text').style.textDecoration = 'line-through';
   }
-}
-
-function createTodoMarkup({ text, priority, id }) {
-  const bgColor = createBgColor(priority);
-
-  return `
-    <li class="todos-item" style="background-color: ${bgColor}">
-      <span class="todos-text">${text}</span>
-      <span class="todos-info">${priority}</span>
-      <div class="btn-wrapper">
-        <button id="edit" class="edit" data-id="${id}" type="button">&#9998;</button>
-        <button id="done" class="done" data-id="${id}" type="button">&#10003;</button>
-        <button id="delete" class="delete" data-id="${id}" type="button">&#10007;</button>
-      </div>
-    </li>`;
-}
+  if (e.target.id === 'edit') {
+    const todoItem = e.target.closest('.todos-item');
+  }
+});
