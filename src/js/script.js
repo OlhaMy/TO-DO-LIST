@@ -70,3 +70,30 @@ refs.todoList.addEventListener('click', e => {
     const todoItem = e.target.closest('.todos-item');
   }
 });
+
+// !=========================================
+
+// function getBgImg(q) {
+//   const BASE_URL = 'https://pixabay.com/api/';
+//   const params = URLSearchParams({
+//     key: '44946850-4c776fe0ffa968f959f660738',
+//     q,
+//     image_type: 'photo',
+//     orientation: 'horizontal',
+//     safesearch: true,
+//   });
+
+//   return fetch(`${BASE_URL}?${params}`).then(response => {
+//     if (!response.ok) {
+//       throw new Error(response.status);
+//     }
+//     return response.json();
+//   });
+// }
+
+// const body = document.querySelector('body');
+// const bgImg = body.style.backgroundImage(''); //як підставити q????????
+
+// getBgImg(body).then.catch;
+
+// function createBgImg() {}
