@@ -9,6 +9,7 @@ import {
   createBgColor,
   createTodoMarkup,
 } from './todoMarkup';
+import { getBgImg, getTimeOfDay, updateBackground } from './BgImg';
 
 const refs = {
   form: document.querySelector('.js-form'),
@@ -71,29 +72,10 @@ refs.todoList.addEventListener('click', e => {
   }
 });
 
-// !=========================================
+window.addEventListener('load', updateBackground);
 
-// function getBgImg(q) {
-//   const BASE_URL = 'https://pixabay.com/api/';
-//   const params = URLSearchParams({
-//     key: '44946850-4c776fe0ffa968f959f660738',
-//     q,
-//     image_type: 'photo',
-//     orientation: 'horizontal',
-//     safesearch: true,
-//   });
+setInterval(updateBackground, 3600000);
 
-//   return fetch(`${BASE_URL}?${params}`).then(response => {
-//     if (!response.ok) {
-//       throw new Error(response.status);
-//     }
-//     return response.json();
-//   });
-// }
-
-// const body = document.querySelector('body');
-// const bgImg = body.style.backgroundImage(''); //як підставити q????????
-
-// getBgImg(body).then.catch;
-
-// function createBgImg() {}
+// edit function
+// scroll
+// render  catchphrases
