@@ -10,6 +10,7 @@ import {
   createTodoMarkup,
 } from './todoMarkup';
 import { getBgImg, getTimeOfDay, updateBackground } from './BgImg';
+import { getNewQuote } from './getNewQuote';
 
 const refs = {
   form: document.querySelector('.js-form'),
@@ -29,7 +30,15 @@ refs.form.addEventListener('submit', e => {
     return iziToast.error({
       title: 'Error',
       message: 'Please enter both a task and a priority',
-      position: 'topRight',
+      position: 'bottomRight',
+    });
+  }
+
+  if (todos.some(todo => todo.text === todosName)) {
+    return iziToast.warning({
+      title: 'Warning',
+      message: 'You already have such a task',
+      position: 'bottomRight',
     });
   }
 
@@ -43,6 +52,7 @@ refs.form.addEventListener('submit', e => {
   saveToLs('todos', todos);
 
   refs.todoList.innerHTML = todos.map(createTodoMarkup).join('');
+  refs.todoList.scrollTop = refs.todoList.scrollHeight;
   e.currentTarget.reset();
 });
 
@@ -75,6 +85,8 @@ refs.todoList.addEventListener('click', e => {
 window.addEventListener('load', updateBackground);
 
 setInterval(updateBackground, 3600000);
+
+getNewQuote();
 
 // edit function
 // scroll
