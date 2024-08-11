@@ -2,15 +2,11 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 import Data from './dateRender';
-
 import { saveToLs, loadFromLs } from './localStorage';
-import {
-  sortTodosByPriority,
-  createBgColor,
-  createTodoMarkup,
-} from './todoMarkup';
+import { sortTodosByPriority, createTodoMarkup } from './todoMarkup';
 import { getBgImg, getTimeOfDay, updateBackground } from './BgImg';
 import { getNewQuote } from './getNewQuote';
+import { startEditing, cancelEditing, saveEditing } from './editing';
 
 const refs = {
   form: document.querySelector('.js-form'),
@@ -73,21 +69,18 @@ refs.todoList.addEventListener('click', e => {
     saveToLs('todos', todos);
     e.target.closest('.todos-item').remove();
   }
+
   if (e.target.id === 'done') {
     const todoItem = e.target.closest('.todos-item');
     todoItem.querySelector('.todos-text').style.textDecoration = 'line-through';
   }
+
   if (e.target.id === 'edit') {
     const todoItem = e.target.closest('.todos-item');
+    startEditing(todoId, todoItem, todos, refs);
   }
 });
 
 window.addEventListener('load', updateBackground);
-
 setInterval(updateBackground, 3600000);
-
 getNewQuote();
-
-// edit function
-// scroll
-// render  catchphrases
