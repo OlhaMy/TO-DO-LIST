@@ -120,6 +120,7 @@ main {
   margin-left: 10px;
   font-size: 0.9em;
   color: #777;
+  margin-right: 6px;
 }
 
 /* General button styles for all buttons */
@@ -158,7 +159,7 @@ main {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  width: 100%;
+  width: 20%;
   background-color: transparent;
   box-sizing: border-box;
   outline: none;
@@ -180,21 +181,21 @@ main {
 }
 
 #save {
-  background-color: #28a745;
+  background-color: #196c2e;
   color: white;
 }
 
 #save:hover {
-  background-color: #218838;
+  background-color: #7ee787;
 }
 
 #cancel {
-  background-color: #dc3545;
+  background-color: #ba0202;
   color: white;
 }
 
 #cancel:hover {
-  background-color: #c82333;
+  background-color: #fda6a6;
 }
 
 /* Additional styles for button group in edit form */
