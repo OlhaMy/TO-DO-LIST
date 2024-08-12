@@ -1,32 +1,46 @@
-ToDo List Application - README Overview The ToDo List application is a web-based
+ToDo List Application - README 
+
+Overview The ToDo List application is a web-based
 tool designed to help users efficiently manage their daily tasks and priorities.
 This application allows users to add, edit, prioritize, and delete tasks,
-providing a seamless experience for organizing their to-dos. It's ideal for
+providing a seamless experience for organizing their to-dos. 
+It's ideal for
 anyone looking to keep track of tasks, whether they are students, professionals,
 or anyone who needs an organized approach to their day-to-day activities.
 
 <!-- !---------------------------------------------------------------------------------- -->
 
 Features Add New Tasks: Users can easily add new tasks by entering the task name
-and selecting a priority (Low, Medium, High). Edit Tasks: Users can edit
-existing tasks to update the name or priority. Task Prioritization: Tasks are
+and selecting a priority (Low, Medium, High). 
+Edit Tasks: Users can edit
+existing tasks to update the name or priority. 
+Task Prioritization: Tasks are
 automatically sorted by priority, ensuring that the most important tasks are
-always at the top of the list. Delete Tasks: Users can remove tasks from the
-list once they are no longer needed. Mark Tasks as Done: Tasks can be marked as
-completed, which visually differentiates them from pending tasks. Persistent
-Storage: The application uses local storage to save the tasks, so even after
+always at the top of the list. 
+Delete Tasks: Users can remove tasks from the
+list once they are no longer needed. 
+Mark Tasks as Done: Tasks can be marked as
+completed, which visually differentiates them from pending tasks. 
+Persistent Storage: The application uses local storage to save the tasks, so even after
 closing the browser, the tasks remain intact.
 
 <!-- !---------------------------------------------------------------------------------- -->
 
-Technologies Used HTML5 & CSS3: The application structure and styling were built
+Technologies Used 
+HTML5 & CSS3: The application structure and styling were built
 using HTML5 and CSS3, ensuring a responsive and user-friendly interface.
+
 JavaScript (ES6): Core functionality for adding, editing, and deleting tasks was
-implemented using modern JavaScript features. Local Storage API: To store tasks
+implemented using modern JavaScript features. 
+
+Local Storage API: To store tasks
 persistently, the Local Storage API was used, enabling the tasks to be saved
-even when the browser is closed. IziToast: This library was utilized for elegant
-notifications to inform users about successful actions or errors. Modular
-JavaScript: The codebase is organized into modules, making it more manageable
+even when the browser is closed. 
+
+IziToast: This library was utilized for elegant
+notifications to inform users about successful actions or errors. 
+
+Modular JavaScript: The codebase is organized into modules, making it more manageable
 and easier to maintain.
 
 <!-- !---------------------------------------------------------------------------------- -->
@@ -70,10 +84,14 @@ edited tasks automatically. User Feedback:
 
 Integrated iziToast for user notifications, enhancing the user experience with
 visual feedback on task actions. Benefits of the Application User-Friendly
+
 Interface: The application is designed to be intuitive, with all essential
-features easily accessible. Time Management: Helps users prioritize tasks,
+features easily accessible. 
+
+Time Management: Helps users prioritize tasks,
 ensuring that critical tasks are completed first. Persistence: Tasks are stored
 in local storage, so users don’t have to worry about losing their to-dos.
+
 Customization: Users can edit tasks at any time, allowing for flexibility in
 managing their tasks. Responsiveness: The application is fully responsive and
 can be used on various devices, from desktops to smartphones.
@@ -82,10 +100,11 @@ can be used on various devices, from desktops to smartphones.
 
 Target Audience This ToDo List application is ideal for:
 
-Students: Manage assignments, projects, and study schedules. Professionals: Keep
-track of work tasks, deadlines, and meetings. Busy Individuals: Organize
-personal tasks, from grocery lists to daily chores. Anyone: Who needs an
-easy-to-use tool for managing their tasks efficiently. This application is a
+Students: Manage assignments, projects, and study schedules. 
+Professionals: Keep track of work tasks, deadlines, and meetings. 
+Busy Individuals: Organize personal tasks, from grocery lists to daily chores. 
+Anyone: Who needs an easy-to-use tool for managing their tasks efficiently. 
+This application is a
 versatile tool for anyone looking to improve their productivity and task
 management. With its simple interface and powerful features, it's an excellent
 addition to your daily routine.
